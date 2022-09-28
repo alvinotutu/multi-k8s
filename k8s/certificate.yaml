@@ -14,4 +14,5 @@ spec:
   acme:
     config:
       - http01:
-          ingressClass: nginx
+          ingress:
+            class: nginx
