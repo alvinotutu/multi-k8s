@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: k8s-demo-vhanp-com-tls
+spec:
+  secretName: k8s-demo-vhanp-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: k8s-demo.vhanp.com
+  dnsNames:
+    - k8s-demo.vhanp.com
+    - www.k8s-demo.vhanp.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
